@@ -4,8 +4,8 @@
     version="2.0">
  
     <endpoint
-        name="WSSample"
-        implementation="guermann.samples.wssample.WSSample"
-        url-pattern="/WSSample" />
+        name="VehicleService"
+        implementation="guermann.sample.wssample.VehicleService"
+        url-pattern="/VehicleService" />
  
 </endpoints>

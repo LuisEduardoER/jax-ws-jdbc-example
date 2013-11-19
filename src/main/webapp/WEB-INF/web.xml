@@ -17,6 +17,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>jaxws</servlet-name>
-        <url-pattern>/WSSample</url-pattern>
+        <url-pattern>/VehicleService</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. -->
+<xs:schema xmlns:tns="http://wssample.sample.guermann/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://wssample.sample.guermann/">
+
+  <xs:element name="getVehicleList" type="tns:getVehicleList"/>
+
+  <xs:element name="getVehicleListResponse" type="tns:getVehicleListResponse"/>
+
+  <xs:complexType name="getVehicleList">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getVehicleListResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:vehicle" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vehicle">
+    <xs:sequence>
+      <xs:element name="activeBKO" type="xs:long"/>
+      <xs:element name="category" type="xs:int"/>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="objectType" type="xs:int"/>
+      <xs:element name="vehicleName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
