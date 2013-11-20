@@ -87,6 +87,8 @@
                 <version>2.2</version>
                 <executions>
                     <execution>
+		        <id>generate-wsdl</id>
+                        <phase>process-classes</phase>
                         <goals>
                             <goal>wsgen</goal>
                         </goals>
@@ -96,6 +98,26 @@
                             <genWsdl>true</genWsdl>           
                             <keep>true</keep>
                         </configuration>
+                    </execution>
+		    <execution>
+                       <id>generate-stubs</id>
+                       <phase>process-classes</phase> 
+                       <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+			<configuration>
+			    <wsdlDirectory>
+			          ${project.build.sourceDirectory}/importwsdl
+			    </wsdlDirectory>
+			    <wsdlFiles>
+			          <wsdlFile>MeminfoService.wsdl</wsdlFile>
+			    </wsdlFiles>
+			    <!-- *** need the next line to set the wsdlLocation in the generated stubs *** -->
+			    <!-- <wsdlLocation>http://localhost:8080/busemu-1.0/BUSService?wsdl</wsdlLocation> -->
+			    <wsdlLocation>http://localhost:8080/MeminfoService-1.0-SNAPSHOT/MeminfoService?wsdl</wsdlLocation>
+			    <sourceDestDir>${project.build.sourceDirectory}</sourceDestDir>
+			    <verbose>true</verbose>
+			</configuration>
                     </execution>
                 </executions>
             </plugin>

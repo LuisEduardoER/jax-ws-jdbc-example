@@ -12,7 +12,14 @@
 
   <xs:complexType name="getVehicleListResponse">
     <xs:sequence>
-      <xs:element name="return" type="tns:vehicle" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="return" type="tns:vehicleServiceResult" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vehicleServiceResult">
+    <xs:sequence>
+      <xs:element name="memorySize" type="xs:long"/>
+      <xs:element name="vehicleList" type="tns:vehicle" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
