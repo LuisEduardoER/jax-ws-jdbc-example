@@ -1,0 +1,1 @@
+This is the sample code of JAX-WS SOAP Web Service with JDBC connection
